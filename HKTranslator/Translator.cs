@@ -9,7 +9,7 @@ namespace HKTranslator
     {
         static Dictionary<string, string> Dict = new Dictionary<string, string>();
 
-        static Translator() // Generate static dictionary from embedded file RoomDict
+        static Translator() // Generate dictionary from embedded file RoomDict
         {
             string[] DictionaryArray = RoomDictionary.Split(Environment.NewLine.ToCharArray()); //split input string into array of strings "goodName:badName"
             foreach (string roomPair in DictionaryArray)
@@ -29,6 +29,14 @@ namespace HKTranslator
         {
             string goodName;
             if (Dict.TryGetValue(badName, out goodName)) return goodName;
+            else return badName;
+        }
+
+        public static string TranslateTransitionName(string badName) // For use with Randomizer3.0 transition names
+        {
+            string[] transitionArray = badName.Split('[',']');
+            string goodSceneName;
+            if (Dict.TryGetValue(transitionArray[0], out goodSceneName)) return goodSceneName + '[' + transitionArray[1] + ']';
             else return badName;
         }
 
