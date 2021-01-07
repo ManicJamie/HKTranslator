@@ -10,5 +10,12 @@ namespace HKTranslator
     {
         public override string GetVersion() => "1.0";
         public override int LoadPriority() => 1;
+
+        public override void Initialize() // preload Translator and UnTranslator
+        {
+            base.Initialize();
+            Translator.Initialize();
+            UnTranslator.Initialize();
+        }
     }
 }

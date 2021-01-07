@@ -9,7 +9,12 @@ namespace HKTranslator
     {
         static Dictionary<string, string> Dict = new Dictionary<string, string>();
 
-        static UnTranslator() // Generate dictionary from embedded file RoomDict
+        static UnTranslator() // static constructor. Should never be called, as Initialize() should be called explicitly.
+        {
+            Initialize();
+        }
+
+        public static void Initialize() // Initialise dictionary
         {
             string[] DictionaryArray = RoomDictionary.Split(Environment.NewLine.ToCharArray()); //split input string into array of strings "goodName:badName"
             foreach (string roomPair in DictionaryArray)
