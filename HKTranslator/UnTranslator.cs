@@ -5,11 +5,11 @@ using System.Text;
 
 namespace HKTranslator
 {
-    public static class Translator
+    public static class UnTranslator // Reverses Translator operations.
     {
         static Dictionary<string, string> Dict = new Dictionary<string, string>();
 
-        static Translator() // Generate dictionary from embedded file RoomDict
+        static UnTranslator() // Generate dictionary from embedded file RoomDict
         {
             string[] DictionaryArray = RoomDictionary.Split(Environment.NewLine.ToCharArray()); //split input string into array of strings "goodName:badName"
             foreach (string roomPair in DictionaryArray)
@@ -17,24 +17,25 @@ namespace HKTranslator
                 string[] rooms = roomPair.Split(':'); //split string into goodName and badName
                 try
                 {
-                    Dict.Add(rooms[0], rooms[1]);
-                } catch
+                    Dict.Add(rooms[1], rooms[0]);
+                }
+                catch
                 {
-                    
+
                 }
             }
         }
 
-        public static string TranslateSceneName(string badName) // Get room name from dictionary. If dictionary does not contain name, get badName.
+        public static string TranslateSceneName(string goodName) // Get room name from dictionary. If dictionary does not contain name, get badName.
         {
-            string goodName;
-            if (Dict.TryGetValue(badName, out goodName)) return goodName;
-            else return badName;
+            string badName;
+            if (Dict.TryGetValue(goodName, out badName)) return badName;
+            else return goodName;
         }
 
         public static string TranslateTransitionName(string badName) // For use with Randomizer3.0 transition names
         {
-            string[] transitionArray = badName.Split('[',']');
+            string[] transitionArray = badName.Split('[', ']');
             return TranslateSceneName(transitionArray[0]) + '[' + transitionArray[1] + ']';
         }
 
