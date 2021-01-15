@@ -49,5 +49,8 @@
       <Name>HKTranslator</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="dictionary.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
