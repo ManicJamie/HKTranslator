@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Xml;
@@ -13,7 +10,6 @@ namespace IntegratedTranslator
         // Dictionaries for translation.
         private static Dictionary<string, string> TranslateDict;
         private static Dictionary<string, string> RevertDict;
-
         private static XmlDocument xml;
         private static bool DictActive;
         private static bool ReverseDictExists;
