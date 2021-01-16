@@ -294,7 +294,7 @@
 </Entry>
         <Entry>
         <oldName>Fungus1_17</oldName>
-        <newName>Greenpath_Left_of_First_Hornet_Sighting</newName>
+        <newName>Greenpath_Charger_Corridor</newName>
 </Entry>
         <Entry>
         <oldName>Fungus1_19</oldName>
@@ -1130,7 +1130,7 @@
 </Entry>
         <Entry>
         <oldName>Hive_05</oldName>
-        <newName>Hive_Hive_Knight_Arena</newName>
+        <newName>Hive_Knight_Arena</newName>
 </Entry>
         <Entry>
         <oldName>GG_Pipeway</oldName>

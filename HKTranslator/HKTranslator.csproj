@@ -47,5 +47,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnTranslator.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="dictionary.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
