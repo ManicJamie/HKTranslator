@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is the dictionary by which room and transition names are translated. To edit a room name, find the entry and change newName.-->
 <Dictionary>
   <Entry>
     <oldName>Tutorial_01</oldName>

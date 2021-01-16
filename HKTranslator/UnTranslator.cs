@@ -8,6 +8,7 @@ namespace HKTranslator
     public static class UnTranslator // Reverses Translator operations.
     {
         static Dictionary<string, string> Dict = new Dictionary<string, string>();
+        public static bool isTranslating;
 
         static UnTranslator() // static constructor. Should never be called, as Initialize() should be called explicitly.
         {
@@ -17,6 +18,7 @@ namespace HKTranslator
         public static void Initialize() // Initialise dictionary
         {
             string[] DictionaryArray = RoomDictionary.Split(Environment.NewLine.ToCharArray()); //split input string into array of strings "goodName:badName"
+            isTranslating = true;
             foreach (string roomPair in DictionaryArray)
             {
                 string[] rooms = roomPair.Split(':'); //split string into goodName and badName
@@ -34,7 +36,7 @@ namespace HKTranslator
         public static string TranslateSceneName(string goodName) // Get room name from dictionary. If dictionary does not contain name, get badName.
         {
             string badName;
-            if (Dict.TryGetValue(goodName, out badName)) return badName;
+            if (Dict.TryGetValue(goodName, out badName) && isTranslating) return badName;
             else return goodName;
         }
 

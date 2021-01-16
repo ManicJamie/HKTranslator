@@ -8,6 +8,7 @@ namespace HKTranslator
     public static class Translator
     {
         static Dictionary<string, string> Dict = new Dictionary<string, string>();
+        public static bool isTranslating;
 
         static Translator() // static constructor. Should never be called, as Initialize() should be called explicitly.
         {
@@ -17,6 +18,7 @@ namespace HKTranslator
         public static void Initialize() // Initialise dictionary
         {
             string[] DictionaryArray = RoomDictionary.Split(Environment.NewLine.ToCharArray()); //split input string into array of strings "goodName:badName"
+            isTranslating = true;
             foreach (string roomPair in DictionaryArray)
             {
                 string[] rooms = roomPair.Split(':'); //split string into goodName and badName
@@ -34,7 +36,7 @@ namespace HKTranslator
         public static string TranslateSceneName(string badName) // Get room name from dictionary. If dictionary does not contain name, get badName.
         {
             string goodName;
-            if (Dict.TryGetValue(badName, out goodName)) return goodName;
+            if (Dict.TryGetValue(badName, out goodName) && isTranslating) return goodName;
             else return badName;
         }
 
