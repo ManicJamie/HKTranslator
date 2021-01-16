@@ -8,8 +8,8 @@ namespace IntegratedTranslator
     public static class Translator
     {
         // Dictionaries for translation.
-        private static Dictionary<string, string> TranslateDict;
-        private static Dictionary<string, string> RevertDict;
+        private static Dictionary<string, string> TranslateDict = new Dictionary<string, string>();
+        private static Dictionary<string, string> RevertDict = new Dictionary<string, string>();
         private static XmlDocument xml;
         private static bool DictActive;
         private static bool ReverseDictExists;
@@ -54,7 +54,7 @@ namespace IntegratedTranslator
             foreach (XmlNode node in xml.DocumentElement.ChildNodes) // Iterate through each <entry> tag in dictionary.
             {
                 TranslateDict.Add(node.SelectSingleNode("oldName").InnerText, node.SelectSingleNode("newName").InnerText);
-                if (CreateInvertedDict == true) 
+                if (CreateInvertedDict == true)
                 {
                     RevertDict.Add(node.SelectSingleNode("newName").InnerText, node.SelectSingleNode("oldName").InnerText);
                 }
@@ -66,7 +66,7 @@ namespace IntegratedTranslator
         /// </summary>
         /// <param name="oldName">Name of scene</param>
         /// <returns>A more descriptive room name if it exists in the dictionary, else oldName.</returns>
-        public static string TranslateRoomName(string oldName)
+        public static string TranslateSceneName(string oldName)
         {
             string newName;
             if (TranslateDict.TryGetValue(oldName, out newName))
@@ -85,7 +85,7 @@ namespace IntegratedTranslator
         {
             if (!DictActive) { return oldName; }
             string[] transitionArray = oldName.Split('[', ']');
-            return TranslateRoomName(transitionArray[0]) + '[' + transitionArray[1] + ']';
+            return TranslateSceneName(transitionArray[0]) + '[' + transitionArray[1] + ']';
         }
 
         /// <summary>
@@ -93,10 +93,10 @@ namespace IntegratedTranslator
         /// </summary>
         /// <param name="oldName">Translated room name.</param>
         /// <returns>Original scene name.</returns>
-        public static string ReverseRoomTranslation(string oldName)
+        public static string ReverseSceneTranslation(string oldName)
         {
             if (!ReverseDictExists || !DictActive) { return oldName; }
-            
+
             string newName;
             if (TranslateDict.TryGetValue(oldName, out newName))
             {
@@ -114,7 +114,7 @@ namespace IntegratedTranslator
         {
             if (!DictActive || !ReverseDictExists) { return oldName; }
             string[] transitionArray = oldName.Split('[', ']');
-            return TranslateRoomName(transitionArray[0]) + '[' + transitionArray[1] + ']';
+            return TranslateSceneName(transitionArray[0]) + '[' + transitionArray[1] + ']';
         }
     }
 }
