@@ -1,18 +1,34 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using UnityEngine;
-using System.IO;
 using System.Xml;
+using System.IO;
 
-namespace IntegratedTranslator
+namespace HKTranslator
 {
+    /// If used in your own project, you should change the Log() routine to instead use YourModName.Instance.Log, as this will display the log as coming from your mod.
+    /// You may also desire to change the bool ReverseDictExists if you wish to reverse translation.
+    /// If this is set to false, then the reverse dictionary is not generated, and all calls to Reverse operations will return the input parameter.
+
+    /// <summary>
+    /// Static class to translate scene names into more descriptive room names using an xml stored in the player's saves folder.
+    /// </summary>
     public static class Translator
     {
         // Dictionaries for translation.
         private static Dictionary<string, string> TranslateDict = new Dictionary<string, string>();
         private static Dictionary<string, string> RevertDict = new Dictionary<string, string>();
+
+        // XML document. Disposed after loading.
         private static XmlDocument xml;
+
+        // Checks whether the dictionary was generated.
         private static bool DictActive;
-        private static bool ReverseDictExists;
+
+        // Change if you want to reverse the translation process.
+        private const bool ReverseDictExists = false;
 
         /// <summary>
         /// Creates dictionary/ies for translation from file in saves folder.
@@ -20,12 +36,11 @@ namespace IntegratedTranslator
         /// </summary>
         public static void Initialize()
         {
-            ReverseDictExists = false; // Change if you wish to reverse translation.
-
             DictActive = LoadXML();
             if (DictActive)
             {
                 CreateDicts(ReverseDictExists);
+                xml = null;
             }
         }
 
@@ -37,9 +52,10 @@ namespace IntegratedTranslator
         {
             if (!File.Exists(Path.Combine(Application.persistentDataPath, "TranslatorDictionary.xml")))
             {
-                Modding.Logger.Log("XML not found. Please place TranslatorDictionary.xml into your saves folder.");
+                Log("XML not found. Please place TranslatorDictionary.xml into your saves folder.");
                 return false;
             }
+            Log("Translation XML loaded.");
             xml = new XmlDocument();
             xml.Load(Path.Combine(Application.persistentDataPath, "TranslatorDictionary.xml"));
             return true;
@@ -115,6 +131,14 @@ namespace IntegratedTranslator
             if (!DictActive || !ReverseDictExists) { return oldName; }
             string[] transitionArray = oldName.Split('[', ']');
             return TranslateSceneName(transitionArray[0]) + '[' + transitionArray[1] + ']';
+        }
+
+        /// <summary>
+        /// Logs to ModdingAPI. Change to log as an instance of your own mod.
+        /// </summary>
+        public static void Log(object message)
+        {
+            Modding.Logger.Log(message);
         }
     }
 }

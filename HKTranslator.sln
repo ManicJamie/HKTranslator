@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HKTranslator", "HKTranslator\HKTranslator.csproj", "{A5C9C4FD-BEC9-4C2D-953B-210FE635C618}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{0B9DD41E-F57E-4405-ACE6-DD9F2E01074F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegratedTranslator", "IntegratedTranslator\IntegratedTranslator.csproj", "{8246D154-DB6B-4CD2-9E0E-EECA8309299D}"
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A5C9C4FD-BEC9-4C2D-953B-210FE635C618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5C9C4FD-BEC9-4C2D-953B-210FE635C618}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5C9C4FD-BEC9-4C2D-953B-210FE635C618}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5C9C4FD-BEC9-4C2D-953B-210FE635C618}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0B9DD41E-F57E-4405-ACE6-DD9F2E01074F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0B9DD41E-F57E-4405-ACE6-DD9F2E01074F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B9DD41E-F57E-4405-ACE6-DD9F2E01074F}.Release|Any CPU.ActiveCfg = Release|Any CPU
