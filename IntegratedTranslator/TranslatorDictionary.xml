@@ -10,7 +10,7 @@
     <newName>Dirtmouth</newName>
   </Entry>
   <Entry>
-    <oldName>Room_Shop</oldName>
+    <oldName>Room_shop</oldName>
     <newName>Sly</newName>
   </Entry>
   <Entry>
@@ -22,7 +22,7 @@
     <newName>Dirtmouth_Stag</newName>
   </Entry>
   <Entry>
-    <oldName>Room_Mapper</oldName>
+    <oldName>Room_mapper</oldName>
     <newName>Iselda</newName>
   </Entry>
   <Entry>
@@ -90,7 +90,7 @@
     <newName>Crossroads_False_Knight_Arena</newName>
   </Entry>
   <Entry>
-    <oldName>Crossroads_11_Alt</oldName>
+    <oldName>Crossroads_11_alt</oldName>
     <newName>Crossroads_Greenpath_Entrance</newName>
   </Entry>
   <Entry>
@@ -222,7 +222,7 @@
     <newName>Crossroads_Rescue_Sly</newName>
   </Entry>
   <Entry>
-    <oldName>Room_Temple</oldName>
+    <oldName>Room_temple</oldName>
     <newName>Crossroads_Inside_Temple</newName>
   </Entry>
   <Entry>
@@ -358,7 +358,7 @@
     <newName>Greenpath_Unn</newName>
   </Entry>
   <Entry>
-    <oldName>Room_Nailmaster_02</oldName>
+    <oldName>Room_nailmaster_02</oldName>
     <newName>Greenpath_Sheo</newName>
   </Entry>
   <Entry>
@@ -538,11 +538,11 @@
     <newName>Fog_Archives_Entrance</newName>
   </Entry>
   <Entry>
-    <oldName>Fungus3_Archive</oldName>
+    <oldName>Fungus3_archive</oldName>
     <newName>Fog_Archives_Bench</newName>
   </Entry>
   <Entry>
-    <oldName>Fungus3_Archive_02</oldName>
+    <oldName>Fungus3_archive_02</oldName>
     <newName>Fog_Uumuu_Arena</newName>
   </Entry>
   <Entry>
@@ -578,7 +578,7 @@
     <newName>Cliffs_Baldur's_Shell</newName>
   </Entry>
   <Entry>
-    <oldName>Room_Nailmaster</oldName>
+    <oldName>Room_nailmaster</oldName>
     <newName>Cliffs_Mato</newName>
   </Entry>
   <Entry>
@@ -762,7 +762,7 @@
     <newName>Abyss_Corridor_to_Lighthouse</newName>
   </Entry>
   <Entry>
-    <oldName>Abyss_Lighthouse_Room</oldName>
+    <oldName>Abyss_Lighthouse_room</oldName>
     <newName>Abyss_Lighthouse</newName>
   </Entry>
   <Entry>
@@ -946,7 +946,7 @@
     <newName>City_Left_Elevator</newName>
   </Entry>
   <Entry>
-    <oldName>Room_Nailsmith</oldName>
+    <oldName>Room_nailsmith</oldName>
     <newName>City_Nailsmith</newName>
   </Entry>
   <Entry>
