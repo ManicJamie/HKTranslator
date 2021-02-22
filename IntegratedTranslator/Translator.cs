@@ -85,7 +85,7 @@ namespace HKTranslator
         public static string TranslateSceneName(string oldName)
         {
             string newName;
-            if (TranslateDict.TryGetValue(oldName, out newName))
+            if (DictActive && TranslateDict.TryGetValue(oldName, out newName))
             {
                 return newName;
             }

@@ -44,9 +44,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IntegratedTranslator\IntegratedTranslator.csproj">
+    <ProjectReference Include="..\IntegratedTranslator\HKTranslator.csproj">
       <Project>{8246d154-db6b-4cd2-9e0e-eeca8309299d}</Project>
-      <Name>IntegratedTranslator</Name>
+      <Name>HKTranslator</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

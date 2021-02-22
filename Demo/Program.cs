@@ -10,7 +10,7 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-            GenerateXML(RoomDictionary);
+            TranslateDemo();
         }
 
         static void TranslateDemo()
@@ -25,6 +25,10 @@ namespace Demo
             }
         }
 
+        /// <summary>
+        /// used to convert my old dumb way of storing translation dict into big omega brain homothety-suggested way.
+        /// no longer necessary but you can run it if you want
+        /// </summary>
         static void GenerateXML(string input)
         {
             string xmlOut = "<Dictionary>\r\n";

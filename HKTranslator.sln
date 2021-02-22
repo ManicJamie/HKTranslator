@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{0B9DD41E-F57E-4405-ACE6-DD9F2E01074F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegratedTranslator", "IntegratedTranslator\IntegratedTranslator.csproj", "{8246D154-DB6B-4CD2-9E0E-EECA8309299D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HKTranslator", "IntegratedTranslator\HKTranslator.csproj", "{8246D154-DB6B-4CD2-9E0E-EECA8309299D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
