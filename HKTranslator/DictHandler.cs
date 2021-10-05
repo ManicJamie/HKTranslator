@@ -42,9 +42,11 @@ namespace HKTranslator
         {
             if (!File.Exists(Path.Combine(Application.persistentDataPath, "TranslatorDictionary.xml")))
             {
-                xml = new XmlDocument();
-                xml.LoadXml(Properties.Resources.TranslatorDictionary);
-                return true;
+                //xml = new XmlDocument();
+                //xml.LoadXml(Properties.Resources.TranslatorDictionary);
+                //return true;
+                Log("TranslatorDictionary.xml missing! Please add TranslatorDictionary.xml to your saves folder. Can be found here: https://github.com/ManicJamie/HKTranslator/blob/master/TranslatorDictionary.xml");
+                return false;
             }
             xml = new XmlDocument();
             xml.Load(Path.Combine(Application.persistentDataPath, "TranslatorDictionary.xml"));
@@ -57,7 +59,7 @@ namespace HKTranslator
             TranslateDict = new Dictionary<string, string>();
             foreach (XmlNode node in xml.DocumentElement.ChildNodes) // Iterate through each <entry> tag in dictionary.
             {
-                TranslateDict.Add(node.SelectSingleNode("oldName").InnerText, node.SelectSingleNode("newName").InnerText);
+                if (!node.OuterXml.Contains("<!--")) TranslateDict.Add(node.SelectSingleNode("oldName").InnerText, node.SelectSingleNode("newName").InnerText);
             }
         }
 

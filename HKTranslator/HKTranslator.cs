@@ -24,8 +24,8 @@ namespace HKTranslator
             AddAction(LogHandler.LogTracker, RANDOMIZER_TYPE_NAME, "OnTrackerLog");
             AddAction(LogHandler.InitSpoiler, RANDOMIZER_TYPE_NAME, "OnSpoilerLogInit");
             AddAction(LogHandler.LogSpoiler, RANDOMIZER_TYPE_NAME, "OnSpoilerLog");
-            AddAction(LogHandler.InitCondensedSpoiler, RANDOMIZER_TYPE_NAME, "OnCondensedSpoilerLogInit");
-            AddAction(LogHandler.LogCondensedSpoiler, RANDOMIZER_TYPE_NAME, "OnCondensedSpoilerLog");
+            //AddAction(LogHandler.InitCondensedSpoiler, RANDOMIZER_TYPE_NAME, "OnCondensedSpoilerLogInit");
+            //AddAction(LogHandler.LogCondensedSpoiler, RANDOMIZER_TYPE_NAME, "OnCondensedSpoilerLog");
         }
 
         public void Unload()
@@ -38,8 +38,8 @@ namespace HKTranslator
             RemoveAction(LogHandler.LogTracker, RANDOMIZER_TYPE_NAME, "OnTrackerLog");
             RemoveAction(LogHandler.InitSpoiler, RANDOMIZER_TYPE_NAME, "OnSpoilerLogInit");
             RemoveAction(LogHandler.LogSpoiler, RANDOMIZER_TYPE_NAME, "OnSpoilerLog");
-            RemoveAction(LogHandler.InitCondensedSpoiler, RANDOMIZER_TYPE_NAME, "OnCondensedSpoilerLogInit");
-            RemoveAction(LogHandler.LogCondensedSpoiler, RANDOMIZER_TYPE_NAME, "OnCondensedSpoilerLog");
+            //RemoveAction(LogHandler.InitCondensedSpoiler, RANDOMIZER_TYPE_NAME, "OnCondensedSpoilerLogInit");
+            //RemoveAction(LogHandler.LogCondensedSpoiler, RANDOMIZER_TYPE_NAME, "OnCondensedSpoilerLog");
         }
 
         public override string GetVersion() => "0.2b";

@@ -101,7 +101,40 @@ namespace HKTranslator
 
         public static void LogSpoiler(string message)
         {
-            InternalLogSpoiler(message);
+            try
+            {
+                string[] messageLines = message.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                if (messageLines.Length != 1 && messageLines[1] == "PROGRESSION ITEMS") // Main spoiler written in a dump, detect using first (actually second) line
+                {
+                    HKTranslator.Instance.Log("just kill me already");
+                    int startOfTransitions = 0;
+                    for (; startOfTransitions < messageLines.Length; startOfTransitions++) // finding the start of transitions
+                    {
+                        if (messageLines[startOfTransitions] == "TRANSITIONS") break;
+                        HKTranslator.Instance.Log($"start of transitions at {startOfTransitions}");
+                    }
+
+                    for (var a = 0; a < startOfTransitions; a++) { InternalLogSpoiler(messageLines[a]); }
+
+                    for (var i = startOfTransitions; i < messageLines.Length; i++)
+                    {
+                        if (messageLines[i].Contains(':')) { InternalLogSpoiler(DictHandler.TranslateSceneName(messageLines[i].Substring(0, messageLines[i].Length - 1).Replace(' ', '_')) + ":"); }
+                        else if (messageLines[i].Contains("-->"))
+                        {
+                            string[] transSpoilerSplit = messageLines[i].Split(new[] { " --> " }, StringSplitOptions.None);
+                            InternalLogSpoiler($"{DictHandler.TranslateTransitionName(transSpoilerSplit[0])} --> {DictHandler.TranslateTransitionName(transSpoilerSplit[1])}");
+                        } else { InternalLogSpoiler(messageLines[i]); }
+                    }
+                }
+                else
+                {
+                    InternalLogSpoiler(message);
+                }
+            } catch 
+            {
+                HKTranslator.Instance.Log("Broke in Spoiler");
+                InternalLogSpoiler(message);
+            }
         }
 
         public static void LogCondensedSpoiler(string message)
