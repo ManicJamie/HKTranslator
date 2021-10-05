@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- This is the dictionary by which room and transition names are translated. To edit a room name, find the entry and change newName.-->
 <Dictionary>
+  <!-- General rooms -->
   <Entry>
     <oldName>Tutorial_01</oldName>
     <newName>King's_Pass</newName>
@@ -10,7 +11,7 @@
     <newName>Dirtmouth</newName>
   </Entry>
   <Entry>
-    <oldName>Room_Shop</oldName>
+    <oldName>Room_shop</oldName>
     <newName>Sly</newName>
   </Entry>
   <Entry>
@@ -22,7 +23,7 @@
     <newName>Dirtmouth_Stag</newName>
   </Entry>
   <Entry>
-    <oldName>Room_Mapper</oldName>
+    <oldName>Room_mapper</oldName>
     <newName>Iselda</newName>
   </Entry>
   <Entry>
@@ -49,6 +50,15 @@
     <oldName>Room_Tram</oldName>
     <newName>Lower_Tram</newName>
   </Entry>
+  <Entry>
+    <oldName>Room_Charm_Shop</oldName>
+    <newName>Salubra</newName>
+  </Entry>
+  <Entry>
+    <oldName>Room_temple</oldName>
+    <newName>Black_Egg_Temple</newName>
+  </Entry>
+  <!-- Crossroads -->
   <Entry>
     <oldName>Crossroads_01</oldName>
     <newName>Crossroads_Well</newName>
@@ -90,7 +100,7 @@
     <newName>Crossroads_False_Knight_Arena</newName>
   </Entry>
   <Entry>
-    <oldName>Crossroads_11_Alt</oldName>
+    <oldName>Crossroads_11_alt</oldName>
     <newName>Crossroads_Greenpath_Entrance</newName>
   </Entry>
   <Entry>
@@ -214,17 +224,10 @@
     <newName>Crossroads_Menderbug</newName>
   </Entry>
   <Entry>
-    <oldName>Room_Charm_Shop</oldName>
-    <newName>Crossroads_Salubra</newName>
-  </Entry>
-  <Entry>
     <oldName>Room_ruinhouse</oldName>
     <newName>Crossroads_Rescue_Sly</newName>
   </Entry>
-  <Entry>
-    <oldName>Room_Temple</oldName>
-    <newName>Crossroads_Inside_Temple</newName>
-  </Entry>
+  <!-- Greenpath -->
   <Entry>
     <oldName>Fungus1_01</oldName>
     <newName>Greenpath_Entrance</newName>
@@ -358,7 +361,7 @@
     <newName>Greenpath_Unn</newName>
   </Entry>
   <Entry>
-    <oldName>Room_Nailmaster_02</oldName>
+    <oldName>Room_nailmaster_02</oldName>
     <newName>Greenpath_Sheo</newName>
   </Entry>
   <Entry>
@@ -411,7 +414,7 @@
   </Entry>
   <Entry>
     <oldName>Fungus2_11</oldName>
-    <newName>Fungal_Right_of_Bouncy_Grub</newName>
+    <newName>Fungal_Epogo</newName>
   </Entry>
   <Entry>
     <oldName>Fungus2_12</oldName>
@@ -538,11 +541,11 @@
     <newName>Fog_Archives_Entrance</newName>
   </Entry>
   <Entry>
-    <oldName>Fungus3_Archive</oldName>
+    <oldName>Fungus3_archive</oldName>
     <newName>Fog_Archives_Bench</newName>
   </Entry>
   <Entry>
-    <oldName>Fungus3_Archive_02</oldName>
+    <oldName>Fungus3_archive_02</oldName>
     <newName>Fog_Uumuu_Arena</newName>
   </Entry>
   <Entry>
@@ -578,7 +581,7 @@
     <newName>Cliffs_Baldur's_Shell</newName>
   </Entry>
   <Entry>
-    <oldName>Room_Nailmaster</oldName>
+    <oldName>Room_nailmaster</oldName>
     <newName>Cliffs_Mato</newName>
   </Entry>
   <Entry>
@@ -587,7 +590,7 @@
   </Entry>
   <Entry>
     <oldName>Mines_02</oldName>
-    <newName>Crystal_Dark_Entrance</newName>
+    <newName>Crystal_Main_Entrance</newName>
   </Entry>
   <Entry>
     <oldName>Mines_03</oldName>
@@ -762,7 +765,7 @@
     <newName>Abyss_Corridor_to_Lighthouse</newName>
   </Entry>
   <Entry>
-    <oldName>Abyss_Lighthouse_Room</oldName>
+    <oldName>Abyss_Lighthouse_room</oldName>
     <newName>Abyss_Lighthouse</newName>
   </Entry>
   <Entry>
@@ -946,7 +949,7 @@
     <newName>City_Left_Elevator</newName>
   </Entry>
   <Entry>
-    <oldName>Room_Nailsmith</oldName>
+    <oldName>Room_nailsmith</oldName>
     <newName>City_Nailsmith</newName>
   </Entry>
   <Entry>
@@ -1055,19 +1058,19 @@
   </Entry>
   <Entry>
     <oldName>Ruins2_01</oldName>
-    <newName>City_Spire_Second_Floor</newName>
+    <newName>City_Spire_Great_Husk</newName>
   </Entry>
   <Entry>
     <oldName>Ruins2_01_b</oldName>
-    <newName>City_Spire_First_Floor</newName>
+    <newName>City_Spire_Base</newName>
   </Entry>
   <Entry>
     <oldName>Ruins2_03</oldName>
-    <newName>City_Spire_Fourth_Floor</newName>
+    <newName>City_Spire_Watchers</newName>
   </Entry>
   <Entry>
     <oldName>Ruins2_03b</oldName>
-    <newName>City_Spire_Third_Floor</newName>
+    <newName>City_Spire_Below_Watchers</newName>
   </Entry>
   <Entry>
     <oldName>Ruins2_04</oldName>
@@ -1474,7 +1477,7 @@
     <newName>POP_Final</newName>
   </Entry>
   <Entry>
-    <oldName>Dream_Final_Boss</oldName>
+    <oldName>Dream_Final</oldName>
     <newName>Egg_Radiance</newName>
   </Entry>
   <Entry>
@@ -1563,7 +1566,7 @@
   </Entry>
   <Entry>
     <oldName>GG_Mighty_Zote</oldName>
-    <newName>GG_Enchanting_Vigorous_Diligent_Overwhelming_Gorgeous_Passionate_Terrifying_Beautiful_Zote</newName>
+    <newName>Invincible_Fearless_Sensual_Mysterious_Enchanting_Vigorous_Diligent_Overwhelming_Gorgeous_Passionate_Terrifying_Beautiful_Zote</newName>
   </Entry>
   <Entry>
     <oldName>GG_Unlock_Wastes</oldName>
