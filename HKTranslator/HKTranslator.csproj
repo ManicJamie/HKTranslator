@@ -3,17 +3,17 @@
     <!-- Change this to the path of your modded HK installation -->
     <HollowKnightRefs>G:\SteamLibrary\steamapps\common\1578 Modded\hollow_knight_Data\Managed</HollowKnightRefs>
     <!-- Change this to the path where you want the ready-to-upload exports to be -->
-    <ExportDir>E:/Github_Projects/__Exports/</ExportDir>
+    <ExportDir>D:\GitHub\HKTranslator\bld</ExportDir>
     <!-- Uncomment this to generate a documentation file to be included with the mod -->
     <!--<DocumentationFile>$(OutputPath)/$(AssemblyTitle).xml</DocumentationFile>-->
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>HKTranslator1._5</RootNamespace>
-    <AssemblyName>HKTranslator1._5</AssemblyName>
+    <RootNamespace>HKTranslator</RootNamespace>
+    <AssemblyName>HKTranslator</AssemblyName>
     <TargetFramework>net472</TargetFramework>
-    <AssemblyTitle>HKTranslator1._5</AssemblyTitle>
-    <Product>HKTranslator1._5</Product>
-    <Description>A Hollow Knight Mod</Description>
+    <AssemblyTitle>HKTranslator</AssemblyTitle>
+    <Product>HKTranslator</Product>
+    <Description>A Hollow Knight Mod supplying translation of default scene names.</Description>
     <Copyright>Copyright ©  2022</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>

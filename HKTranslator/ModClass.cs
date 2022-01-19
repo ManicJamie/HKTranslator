@@ -5,32 +5,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UObject = UnityEngine.Object;
 
-namespace HKTranslator1._5
+namespace HKTranslator
 {
-    public class HKTranslator1._5 : Mod
+    public partial class HKTranslator : Mod, IGlobalSettings<Settings>
     {
-        internal static HKTranslator1._5 Instance;
+        internal static HKTranslator Instance;
 
-    //public override List<ValueTuple<string, string>> GetPreloadNames()
-    //{
-    //    return new List<ValueTuple<string, string>>
-    //    {
-    //        new ValueTuple<string, string>("White_Palace_18", "White Palace Fly")
-    //    };
-    //}
+        private Settings _gs;
 
-    //public HKTranslator1._5() : base("HKTranslator1._5")
-    //{
-    //    Instance = this;
-    //}
 
-    public override void Initialize(Dictionary<string, Dictionary<string, GameObject>> preloadedObjects)
-    {
-        Log("Initializing");
+        public void OnLoadGlobal(Settings s)
+        {
+            _gs = s ?? new Settings();
+        }
 
-        Instance = this;
+        public Settings OnSaveGlobal() => _gs;
 
-        Log("Initialized");
+        public override string GetVersion() => "a0.1";
+
+        public override void Initialize(Dictionary<string, Dictionary<string, GameObject>> preloadedObjects)
+        {
+            Log("Initializing");
+
+            Instance = this;
+            if (_gs == null) { _gs = new Settings(); }
+            DictHandler.Initialize();
+            if (_gs.Enabled) { Events.SubscribeAll(); }
+            
+            Log("Initialized");
+        }
+
+
     }
-}
 }
