@@ -13,26 +13,55 @@ namespace HKTranslator
         private static bool DictActive;
 
 
-        public static void Initialize()
+        public static void Initialize(XmlDocument doc = null)
         {
-            XmlDocument doc = new XmlDocument();
-            DictActive = LoadXML(ref doc);
+            if (doc == null)
+            {
+                doc = new XmlDocument();
+                DictActive = LoadXMLFromSaves(ref doc);
+            }
+            else
+            {
+
+            }
             if (DictActive)
             {
                 CreateDicts(doc);
             }
         }
 
-        public static bool LoadXML(ref XmlDocument xml)
+        public static bool LoadXMLFromSaves(ref XmlDocument xml)
         {
             if (!File.Exists(Path.Combine(Application.persistentDataPath, "TranslatorDictionary.xml")))
             {
                 Log("TranslatorDictionary.xml missing! Please add TranslatorDictionary.xml to your saves folder. Can be found here: https://github.com/ManicJamie/HKTranslator/blob/master/TranslatorDictionary.xml");
                 return false;
             }
-            xml.Load(Path.Combine(Application.persistentDataPath, "TranslatorDictionary.xml"));
-            Log("Translation XML loaded.");
-            return true;
+            try
+            {
+                xml.Load(Path.Combine(Application.persistentDataPath, "TranslatorDictionary.xml"));
+                Log("Translation XML loaded.");
+                return true;
+            } catch
+            {
+                Log("TranslatorDictionary.xml failed to load! Check the file is not malformed.");
+                return false;
+            }
+        }
+
+        public static bool LoadXMLFromFile(XmlDocument xml)
+        {
+
+            try
+            {
+                Log("Translation XML loaded.");
+                return true;
+            }
+            catch
+            {
+                Log("TranslatorDictionary.xml failed to load! Check the file is not malformed.");
+                return false;
+            }
         }
 
         public static void CreateDicts(XmlDocument xml)
